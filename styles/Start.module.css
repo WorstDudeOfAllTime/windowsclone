@@ -1,0 +1,26 @@
+.startBox {
+  height: 600px;
+  width: 550px;
+  background: rgba(28, 28, 28, 0.95);
+  border-radius: 10px;
+  position: fixed;
+  left: 30%;
+  bottom: 60px;
+  z-index: 5;
+  transition:all ease-in-out 1s;
+  animation-name: jumper;
+  animation-duration: .5s;
+}
+.appDisplay {
+  width: 100%;
+  height: 87%;
+}
+.profAndPower {
+  width: 100%;
+  height: 13%;
+  background: whitesmoke;
+}
+@keyframes jumper {
+  from {bottom: -600px}
+  to {bottom: 60px}
+}

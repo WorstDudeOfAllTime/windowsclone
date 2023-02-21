@@ -3,10 +3,12 @@ import Image from 'next/image';
 import { Inter } from '@next/font/google';
 import styles from '@/styles/Home.module.css';
 import StartBar from '@/components/StartBar';
-
+import Start from '@/components/Start';
+import { useState } from 'react';
 const inter = Inter({ subsets: ['latin'] });
 
 export default function Home() {
+  const [showStart, setShowStart] = useState(false);
   return (
     <div className={styles.windowsFrame}>
       <Head>
@@ -15,8 +17,11 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={styles.main}></main>
-      <StartBar />
+      <main className={styles.main} onClick={()=>{
+        setShowStart(false);
+      }}></main>
+      {showStart && <Start showStart={showStart}/>}
+      <StartBar setShowStart={setShowStart} />
     </div>
   );
 }
